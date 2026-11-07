@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --bg:#0f172a;
+    --text:#e2e8f0;
+    --bg-card:#1e293b;
+    --text-muted:#94a3b8;
+    --accent:#38bdf8;
+}
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: system-ui, sans-serif;
+    line-height: 1.6;
+}
+a{
+    text-decoration: none;
+
+    color: var(--accent);
+}
