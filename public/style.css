@@ -1,6 +1,4 @@
-/* =========================================================
-   1. Design tokens (CSS variables)
-   ========================================================= */
+
 :root {
     --bg: #09090b;
     --bg-elev: #111114;
@@ -10,10 +8,10 @@
     --text: #f4f4f5;
     --text-muted: #a1a1aa;
     --text-faint: #71717a;
-    --accent: #c6f432;            /* lime */
-    --accent-ink: #09090b;        /* text on top of accent */
+    --accent: #c6f432;
+    --accent-ink: #09090b;
     --accent-soft: rgba(198, 244, 50, 0.12);
-    --glow: rgba(139, 92, 246, 0.25);   /* violet glow behind hero */
+    --glow: rgba(139, 92, 246, 0.25);
     --grid-line: rgba(255, 255, 255, 0.04);
 
     --font-sans: "Space Grotesk", system-ui, sans-serif;
@@ -33,16 +31,14 @@ body.light {
     --text: #18181b;
     --text-muted: #52525b;
     --text-faint: #71717a;
-    --accent: #4d7c0f;            /* darker green: readable on light bg */
+    --accent: #4d7c0f;
     --accent-ink: #ffffff;
     --accent-soft: rgba(77, 124, 15, 0.1);
     --glow: rgba(139, 92, 246, 0.12);
     --grid-line: rgba(0, 0, 0, 0.04);
 }
 
-/* =========================================================
-   2. Reset + base
-   ========================================================= */
+
 *,
 *::before,
 *::after {
@@ -53,7 +49,7 @@ body.light {
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 90px;     /* so the sticky nav doesn't cover headings */
+    scroll-padding-top: 90px;
 }
 
 body {
@@ -89,16 +85,14 @@ ul {
     color: var(--accent);
 }
 
-/* Visible focus ring for keyboard users */
+
 :focus-visible {
     outline: 2px solid var(--accent);
     outline-offset: 3px;
     border-radius: 6px;
 }
 
-/* =========================================================
-   3. Background decoration
-   ========================================================= */
+
 .bg-grid {
     position: fixed;
     inset: 0;
@@ -107,7 +101,7 @@ ul {
         linear-gradient(var(--grid-line) 1px, transparent 1px),
         linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
     background-size: 56px 56px;
-    /* fade the grid out towards the bottom */
+
     mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
     -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
 }
@@ -125,9 +119,7 @@ ul {
     pointer-events: none;
 }
 
-/* =========================================================
-   4. Navigation
-   ========================================================= */
+
 .site-header {
     position: sticky;
     top: 0;
@@ -136,7 +128,7 @@ ul {
 }
 
 .nav {
-    position: relative;           /* anchor for the mobile dropdown */
+    position: relative;
     max-width: var(--max-width);
     margin: 0 auto;
     display: flex;
@@ -147,7 +139,7 @@ ul {
     border: 1px solid var(--border);
     border-radius: 999px;
     background: color-mix(in srgb, var(--bg) 70%, transparent);
-    backdrop-filter: blur(14px);       /* frosted glass effect */
+    backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
 }
 
@@ -208,12 +200,12 @@ ul {
     transform: rotate(-12deg);
 }
 
-/* Show the right icon for the current theme */
+
 .icon-sun { display: none; }
 body.light .icon-sun { display: block; }
 body.light .icon-moon { display: none; }
 
-/* Hamburger: two lines that become an X */
+
 .menu-btn {
     display: none;
     gap: 5px;
@@ -232,9 +224,7 @@ body.light .icon-moon { display: none; }
 .menu-btn[aria-expanded="true"] span:first-child { transform: translateY(3.5px) rotate(45deg); }
 .menu-btn[aria-expanded="true"] span:last-child  { transform: translateY(-3.5px) rotate(-45deg); }
 
-/* =========================================================
-   5. Buttons
-   ========================================================= */
+
 .btn {
     display: inline-flex;
     align-items: center;
@@ -280,9 +270,7 @@ body.light .icon-moon { display: none; }
     font-size: 1.05rem;
 }
 
-/* =========================================================
-   6. Layout helpers
-   ========================================================= */
+
 .section {
     max-width: var(--max-width);
     margin: 0 auto;
@@ -304,7 +292,7 @@ body.light .icon-moon { display: none; }
     color: var(--accent);
 }
 
-/* thin line after the title */
+
 .section-title::after {
     content: "";
     flex: 1;
@@ -313,9 +301,7 @@ body.light .icon-moon { display: none; }
     background: var(--border-strong);
 }
 
-/* =========================================================
-   7. Hero
-   ========================================================= */
+
 .hero {
     max-width: var(--max-width);
     margin: 0 auto;
@@ -340,7 +326,7 @@ body.light .icon-moon { display: none; }
     background: var(--bg-card);
 }
 
-/* green "online" dot with a pulsing ring */
+
 .pulse {
     position: relative;
     width: 8px;
@@ -364,7 +350,7 @@ body.light .icon-moon { display: none; }
 }
 
 .hero h1 {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);   /* fluid: scales with screen width */
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
     line-height: 1.05;
     letter-spacing: -0.045em;
     font-weight: 700;
@@ -384,7 +370,7 @@ body.light .icon-moon { display: none; }
     gap: 0.9rem;
 }
 
-/* Code editor card */
+
 .code-card {
     border: 1px solid var(--border);
     border-radius: var(--radius);
@@ -432,12 +418,12 @@ body.light .icon-moon { display: none; }
     overflow-x: auto;
 }
 
-/* simple syntax colors */
-.k { color: #c084fc; }           /* keyword */
-.v { color: var(--text); }       /* variable */
-.s { color: var(--accent); }     /* string */
-.b { color: #fb923c; }           /* boolean */
-.f { color: #60a5fa; }           /* function */
+
+.k { color: #c084fc; }
+.v { color: var(--text); }
+.s { color: var(--accent); }
+.b { color: #fb923c; }
+.f { color: #60a5fa; }
 
 .cursor {
     display: inline-block;
@@ -453,9 +439,7 @@ body.light .icon-moon { display: none; }
     50% { opacity: 0; }
 }
 
-/* =========================================================
-   8. About
-   ========================================================= */
+
 .about-grid {
     display: grid;
     grid-template-columns: 1.6fr 1fr;
@@ -492,9 +476,7 @@ body.light .icon-moon { display: none; }
     color: var(--text-faint);
 }
 
-/* =========================================================
-   9. Skills
-   ========================================================= */
+
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -542,9 +524,7 @@ body.light .icon-moon { display: none; }
     border-color: transparent;
 }
 
-/* =========================================================
-   10. Projects
-   ========================================================= */
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
@@ -564,7 +544,7 @@ body.light .icon-moon { display: none; }
     transition: transform 0.35s var(--ease), border-color 0.35s;
 }
 
-/* glow that follows the mouse (position set from JS) */
+
 .project-card::before {
     content: "";
     position: absolute;
@@ -602,7 +582,7 @@ body.light .icon-moon { display: none; }
 
 .project-card p {
     color: var(--text-muted);
-    flex: 1;          /* pushes tags to the bottom so cards line up */
+    flex: 1;
 }
 
 .tags {
@@ -629,9 +609,7 @@ body.light .icon-moon { display: none; }
     background: var(--accent-soft);
 }
 
-/* =========================================================
-   11. Contact
-   ========================================================= */
+
 .contact {
     text-align: center;
 }
@@ -679,9 +657,7 @@ body.light .icon-moon { display: none; }
     border-color: var(--accent);
 }
 
-/* =========================================================
-   12. Footer
-   ========================================================= */
+
 .footer {
     max-width: var(--max-width);
     margin: 0 auto;
@@ -692,9 +668,7 @@ body.light .icon-moon { display: none; }
     color: var(--text-faint);
 }
 
-/* =========================================================
-   13. Scroll reveal animation (JS adds .visible)
-   ========================================================= */
+
 .reveal {
     opacity: 0;
     transform: translateY(30px);
@@ -714,7 +688,7 @@ body.light .icon-moon { display: none; }
     transform: rotate(0deg) translateY(-4px);
 }
 
-/* Respect users who turn off animations in their OS */
+
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -730,9 +704,7 @@ body.light .icon-moon { display: none; }
     }
 }
 
-/* =========================================================
-   14. Responsive (keep media queries at the bottom!)
-   ========================================================= */
+
 @media (max-width: 900px) {
     .hero {
         grid-template-columns: 1fr;
@@ -751,7 +723,7 @@ body.light .icon-moon { display: none; }
         display: grid;
     }
 
-    /* Mobile menu: hidden dropdown, shown when .open is added by JS */
+
     .nav-links {
         position: absolute;
         top: calc(100% + 0.5rem);
