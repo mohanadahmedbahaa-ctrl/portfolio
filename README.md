@@ -4,6 +4,8 @@ My personal portfolio site, where I show who I am, my skills, and the full stack
 
 🔗 **Live:** https://myportofolio-99a96.web.app
 
+![Portfolio screenshot](docs/screenshot.png)
+
 ## Built with
 - HTML5 (semantic markup)
 - CSS3 (custom properties, Flexbox, Grid, media queries, animations)
